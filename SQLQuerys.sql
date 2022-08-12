@@ -47,5 +47,7 @@ ALTER TABLE Userdetails ADD Country varchar(30) AFTER gender ;
  SELECT DISTINCT name from subscribers where Country='india';
  INSERT INTO subscribers VALUES(3,'JK','Jk@gmail.com','M','India'),(4,'sai','sai@gmail.com','M','USA'),(5,'chinni','ch@gmail.com','F','Switzerland'),(6,'Frank','fr@gmail.com','F','Vennice'),(7,'worldstar','ws@gmail.com','M','Korea');
  SELECT * FROM subscribers where country='India' order by name;
-SELECT name FROM subscribers where gender='M' group by name having id>2; 
+SELECT * FROM subscribers where gender='M' group by name having min(id) >2; 
+SELECT * FROM subscribers where gender='M' group by name having Sum(id) >=2; 
+
 EXPLAIN subscribers;

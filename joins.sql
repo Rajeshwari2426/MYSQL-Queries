@@ -1,6 +1,7 @@
 use Spotify	;
 select * from Users;
 select * from Playlists;
+select *from tracks;
 select *from Users Inner Join Playlists on Playlists.user_id= Users.user_id;
 select *from Users Left Join Playlists on Playlists.user_id= Users.user_id;
 select *from Users Right Join Playlists on Playlists.user_id= Users.user_id;
@@ -10,3 +11,4 @@ select *from Users  Join Playlists on Playlists.user_id= Users.user_id join Trac
 select *from Users  Left Join Playlists on Playlists.user_id= Users.user_id left join Tracks on Playlists.p_id=Tracks.p_id;
 select *from Users  Right Join Playlists on Playlists.user_id= Users.user_id right join Tracks on Playlists.p_id=Tracks.p_id;
 select *from Users cross Join Playlists cross join Tracks ;
+DELETE Playlists,Tracks FROM Playlists  INNER JOIN Tracks  ON Playlists.p_id=Tracks.p_id WHERE Tracks.t_name='ashapasam';  
