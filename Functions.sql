@@ -1,3 +1,10 @@
 use Spotify;
 Select user_id,user_name,UCASE(user_name) from Users;
 select 25 div 5;
+SELECT COUNT(*) FROM tracks; 
+SELECT SUM(streaming_Hrs) AS "Total Streaming hrs" FROM subscribers;  
+SELECT AVG(streaming_Hrs) streaming_Hrs FROM subscribers;  
+SELECT AVG(streaming_Hrs) streaming_Hrs FROM subscribers where streaming_Hrs>=5;  
+SELECT country,AVG(streaming_Hrs) streaming_Hrs FROM subscribers group by country ;  
+SELECT country,AVG(streaming_Hrs) streaming_Hrs FROM subscribers group by country having AVG(streaming_Hrs)>3;  
+SELECT * FROM subscribers where gender='M' group by name having min(id) >2; 

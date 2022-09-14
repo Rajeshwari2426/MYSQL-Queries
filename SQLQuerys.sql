@@ -34,7 +34,7 @@ select * from Users where Users.user_id in(select Playlists.user_id from playlis
 select * from Users where Users.user_id in(select Playlists.user_id from playlists where Playlists.p_id in (select Tracks.p_id from Tracks where tracks.t_id=4));
 select * from Playlists;
 select * from Tracks;
-select * from Users where Users.user_id in(select Playlists.user_id from playlists where Playlists.p_id in (select Tracks.p_id from Tracks where tracks.p_id=3));
+select * from Users where Users.user_id in(select Playlists.user_id from playlists where Playlists.p_id in (select Tracks.p_id from Tracks where tracks.p_id=2));
 create Table UserDetails(id int primary key,name varchar(30),email varchar(30),gender varchar(10));
 insert into UserDetails values (1,'Raji','raji@gmail.com','F'),(2,'Deeraj','Dee@gmail.com','M');
 select * from Userdetails;
@@ -49,5 +49,20 @@ ALTER TABLE Userdetails ADD Country varchar(30) AFTER gender ;
  SELECT * FROM subscribers where country='India' order by name;
 SELECT * FROM subscribers where gender='M' group by name having min(id) >2; 
 SELECT * FROM subscribers where gender='M' group by name having Sum(id) >=2; 
-
 EXPLAIN subscribers;
+desc subscribers;
+select * from Users;
+select * from playlists;
+select * from Playlists where Playlists.user_id =100;
+select p_name from Playlists order by p_name Asc ;
+select p_name from Playlists order by p_name Desc;
+ALTER TABLE subscribers ADD streaming_Hrs int AFTER country ; 
+ALTER TABLE  subscribers  DROP COLUMN streaming_Hrs ;  
+update subscribers set streaming_Hrs=1 where id=1;
+update subscribers set streaming_Hrs=3 where id=2;
+update subscribers set streaming_Hrs=7 where id=3;
+update subscribers set streaming_Hrs= 5 where id=4;
+update subscribers set streaming_Hrs=1 where id=6;
+update subscribers set streaming_Hrs=7 where id=7;
+update subscribers set streaming_Hrs=1 where id=5;
+
